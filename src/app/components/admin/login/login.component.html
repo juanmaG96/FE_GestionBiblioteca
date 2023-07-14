@@ -1,0 +1,27 @@
+
+<body>
+    <form [formGroup]="login" (ngSubmit)="admLogin()" >
+      <h6 class="title">  INICIAR SESION  </h6>
+    <div class="mt-5">
+      <label >
+        <i class="fa-solid fa-user"></i>
+        <input formControlName="nombreUsuario" placeholder="username" type="text" id="nombreUsuario">
+      </label>
+      <!-- span *ngIf="login.get('nombreUsuario')?.errors?.['required']" class="text-danger">
+        El <strong>usuario</strong> es requerido
+      </span-->
+
+    </div>
+    <div class="mt-3">
+        <label >
+          <i class="fa-solid fa-lock"></i>
+          <input formControlName="contrasena" placeholder="password" type="password" id="contrasena" autocomplete="off">
+        </label>
+    </div>
+    <div *ngIf="errorLogin" class="text-danger">
+      Usuario o contraseña incorrectos
+    </div>
+        <button class="mt-3 btn" type="submit"> Iniciar sesión </button>
+        <button class="mt-3 btn" type="button" routerLink="registrarse"> Registrarse </button>
+    </form>
+</body>

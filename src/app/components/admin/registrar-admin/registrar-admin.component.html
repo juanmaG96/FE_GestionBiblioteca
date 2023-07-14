@@ -1,0 +1,28 @@
+<body>
+    <form [formGroup]="registrarAdmin" (ngSubmit)="registrarNuevoAdmin()">
+      <h6 class="title"> Registrar Usuario </h6>
+      <div>
+        <label class="label-usuario" id="usuario" for="nombreUsuario">Usuario </label>
+      </div>
+      <div>
+        <input class="input-nomUsuario" type="text" id="nombreUsuario" formControlName="nombreUsuario" autocomplete="off" required>
+      </div>
+
+      <div>
+        <label class="mt-4 label-Contrasena" id="contrasena" for="contrasena">Contraseña </label>
+      </div>
+      <div>
+        <input class="input-contrasena" type="password" id="contrasena" formControlName="contrasena" required>
+      </div>
+      <div *ngIf="registroConfirmado" class="text-message">
+        Usuario registrado con exito!
+      </div>
+      <div *ngIf="errorRegistro" class="text-danger">
+        Error! Ingresar usuario y contraseña
+      </div>
+      <div>
+        <button class="mt-5 btn btn-primary float"  type="submit"> Registrar usuario </button>
+        <button class="mt-5 btn btn-primary float-end" type="button" routerLink="/"> Cancelar </button>
+      </div>
+    </form>
+</body>
